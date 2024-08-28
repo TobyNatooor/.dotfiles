@@ -10,7 +10,7 @@ $username\
 [ ](#2a2f42)\
 $directory\
 $git_branch\
->"""
+\\$ """
 
 [character]
 success_symbol = ''

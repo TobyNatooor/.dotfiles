@@ -271,12 +271,13 @@ require("lazy").setup({
 				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 				--   },
 				-- },
+				-- find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
+				file_ignore_patterns = {
+					"^./.git/",
+				},
 				pickers = {
-					file_ignore_patterns = {
-						"^./.git/",
-					},
 					find_files = {
-						hidden = true,
+						-- hidden = true,
 						follow = true,
 					},
 				},
