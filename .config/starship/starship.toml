@@ -10,6 +10,7 @@ $username\
 [ ](#2a2f42)\
 $directory\
 $git_branch\
+$conda\
 \\$ """
 
 [character]
