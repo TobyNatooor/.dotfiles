@@ -35,3 +35,7 @@ npm
 ripgrep
 ttyper
 openssh
+wl-clipboard
+grim
+slurp
+imagemagick

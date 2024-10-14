@@ -8,3 +8,6 @@ mkdir ~/.config/gammastep
 ln .config/gammastep/config.ini ~/.config/gammastep/config.ini
 mkdir ~/.config/rofi
 ln .config/rofi/config.rasi ~/.config/rofi/config.rasi
+mkdir ~/.config/sway/
+ln .config/sway/config ~/.config/sway/config
+ln .config/sway/swaybar.sh ~/.config/sway/swaybar.sh
