@@ -1,15 +1,3 @@
 [user]
-	email = 60399231+TobyNatooor@users.noreply.github.com 
-	name = Tobias F.
-[init]
-	defaultBranch = main
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
-[credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
-	credentialStore = gpg
+	name = Toby
+	email = 60399231+TobyNatooor@users.noreply.github.com
