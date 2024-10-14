@@ -1,3 +1,6 @@
 [user]
 	name = Toby
 	email = 60399231+TobyNatooor@users.noreply.github.com
+	signingkey = .ssh/id_rsa.pub
+[gpg]
+	format = ssh
