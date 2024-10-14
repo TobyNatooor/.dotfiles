@@ -22,6 +22,10 @@ pulseaudio
 pulseaudio-alsa
 alsa-utils
 
+## Font
+noto-fonts
+noto-fonts-emoji
+
 ## Other
 git
 tmux
