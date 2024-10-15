@@ -195,8 +195,17 @@ bindsym $mod+Shift+m output eDP-1 toggle
 bindsym $mod+Shift+s exec grim
 # Color picker
 bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+# Widen gap
+bindsym $mod+g gaps inner current plus 10
+# Shorten gap
+bindsym $mod+Shift+g gaps inner current minus 10
 
 default_border none
+
+# Disables windows from being focued when cursor hovers over a window
+focus_follows_mouse no
+# Disables the cursor from being moved to focused output or container
+mouse_warping none
 
 #
 # Status Bar:
@@ -213,10 +222,10 @@ bar {
    status_command ~/.config/sway/swaybar.sh
 
     colors {
-        statusline #ffffff
+        statusline #FFFFFF
         background #323232
-        focused_workspace #242424 #242424 #FFFFFF
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        focused_workspace #323232 #323232  #BBBBBB
+        inactive_workspace #323232 #323232  #5c5c5c
     }
 }
 

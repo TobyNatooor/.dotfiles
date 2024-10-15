@@ -12,6 +12,8 @@ starship
 ## Applications
 obsidian
 firefox
+okular
+code
 
 ## Languages
 go
@@ -43,3 +45,4 @@ wl-clipboard
 grim
 slurp
 imagemagick
+miniconda3
