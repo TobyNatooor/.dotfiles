@@ -46,3 +46,11 @@ grim
 slurp
 imagemagick
 miniconda3
+zip
+gdu
+
+# Curl installations
+[sdkman](https://sdkman.io/)
+´´´
+curl -s "https://get.sdkman.io" | bash
+´´´

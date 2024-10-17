@@ -200,8 +200,10 @@ bindsym $mod+g gaps inner current plus 10
 # Shorten gap
 bindsym $mod+Shift+g gaps inner current minus 10
 
+# Disables borders around windows
 default_border none
-
+# Stops wrappings when moving focus between windows
+focus_wrapping no
 # Disables windows from being focued when cursor hovers over a window
 focus_follows_mouse no
 # Disables the cursor from being moved to focused output or container
