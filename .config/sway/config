@@ -199,6 +199,8 @@ bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[
 bindsym $mod+g gaps inner current plus 10
 # Shorten gap
 bindsym $mod+Shift+g gaps inner current minus 10
+# Hide waybar
+bindsym $mod+o exec killall -SIGUSR1 waybar
 
 # Disables borders around windows
 default_border none
@@ -214,21 +216,7 @@ mouse_warping none
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position bottom
-
-    pango_markup enabled
-
-    status_padding 3
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-   status_command ~/.config/sway/swaybar.sh
-
-    colors {
-        statusline #FFFFFF
-        background #323232
-        focused_workspace #323232 #323232  #BBBBBB
-        inactive_workspace #323232 #323232  #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 exec_always gammastep -c ~/.config/gammastep/config.ini

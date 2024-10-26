@@ -4,6 +4,7 @@ The packages below are the main packages I use when setting up Arch linux. The n
 ## Sway
 sway
 rofi
+waybar
 
 ## Terminal
 foot
@@ -48,6 +49,7 @@ imagemagick
 miniconda3
 zip
 gdu
+speech-dispatcher
 
 # Curl installations
 [sdkman](https://sdkman.io/)
