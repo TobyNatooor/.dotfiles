@@ -3,8 +3,14 @@ The packages below are the main packages I use when setting up Arch linux. The n
 
 ## Sway
 sway
-rofi
+wmenu
 waybar
+
+## Graphics
+gtk3
+gtk4
+qt5-wayland
+qt6-wayland
 
 ## Terminal
 foot
@@ -16,18 +22,23 @@ firefox
 okular
 code
 
+## Editor
+vi
+vim
+neovim
+
 ## Languages
 go
 rust
 
 ## Audio
-pulseaudio
-pulseaudio-alsa
-alsa-utils
+pipewire
+coppwr
 
 ## Font
 noto-fonts
 noto-fonts-emoji
+ttf-noto-nerd
 
 ## Other
 git
@@ -50,9 +61,8 @@ miniconda3
 zip
 gdu
 speech-dispatcher
-
-# Curl installations
-[sdkman](https://sdkman.io/)
-´´´
-curl -s "https://get.sdkman.io" | bash
-´´´
+bash-completion
+man
+macchina
+reflector
+brightnessctl

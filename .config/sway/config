@@ -1,3 +1,5 @@
+# xwayland disable
+
 ### Variables
 set $mod Mod1
 # Home row direction keys, like vim
@@ -10,14 +12,15 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun | dmenu_path | wmenu | xargs swaymsg exec --
+# set $menu rofi -show drun | dmenu_path | wmenu | xargs swaymsg exec --
+set $menu wmenu-run
 
 font NotoSansM Nerd Font Demi-Bold Normal 12
 
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 ### Idle configuration
 #
@@ -36,12 +39,12 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+  # input "2:14:SynPS/2_Synaptics_TouchPad" {
+  #     dwt enabled
+  #     tap enabled
+  #     natural_scroll enabled
+  #     middle_emulation enabled
+  # }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -192,7 +195,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+m output eDP-1 toggle
 
 # Take screenshot
-bindsym $mod+Shift+s exec grim
+# bindsym $mod+Shift+s exec grim
+# Take screenshot of particular part of the screen
+bindsym Mod4+Shift+s exec slurp | grim -g - "$HOME/screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png"
 # Color picker
 bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
 # Widen gap
@@ -201,9 +206,25 @@ bindsym $mod+g gaps inner current plus 10
 bindsym $mod+Shift+g gaps inner current minus 10
 # Hide waybar
 bindsym $mod+o exec killall -SIGUSR1 waybar
+# Lock screen
+# bindsym $mod+Shift+l exec swaylock
+#-f -c 000000
+
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+# bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+# bindsym XF86ScreenSaver exec amixer set Master 5%+
+
+# bindsym XF86AudioPlay exec playerctl play-pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previous
 
 # Disables borders around windows
 default_border none
+default_floating_border none
 # Stops wrappings when moving focus between windows
 focus_wrapping no
 # Disables windows from being focued when cursor hovers over a window
@@ -219,6 +240,7 @@ bar {
     swaybar_command waybar
 }
 
-exec_always gammastep -c ~/.config/gammastep/config.ini
+exec_always gammastep -P -c ~/.config/gammastep/config.ini
+# exec_always gammastep -PO 4000
 
 include /etc/sway/config.d/*

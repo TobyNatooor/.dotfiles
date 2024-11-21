@@ -376,6 +376,16 @@ require("lazy").setup({
 			-- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
 			-- used for completion, annotations and signatures of Neovim apis
 			{ "folke/neodev.nvim", opts = {} },
+
+			{
+				"nvim-flutter/flutter-tools.nvim",
+				lazy = false,
+				dependencies = {
+					"nvim-lua/plenary.nvim",
+					"stevearc/dressing.nvim", -- optional for vim.ui.select
+				},
+				config = true,
+			},
 		},
 		config = function()
 			-- Brief aside: **What is LSP?**

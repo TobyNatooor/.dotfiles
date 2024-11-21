@@ -3,9 +3,6 @@ add_newline = false
 command_timeout = 1000
 
 format = """
-[](#a3aed2)\
-$os\
-[](bg#2a2f42 fg:#a3aed2)\
 $username\
 [ ](#2a2f42)\
 $directory\
